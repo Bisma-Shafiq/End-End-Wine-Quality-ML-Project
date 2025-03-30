@@ -1,1 +1,5 @@
-key:val
+features:
+  - feature_1
+  - feature_2
+  - feature_3
+target: target_column
