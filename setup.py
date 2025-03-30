@@ -16,7 +16,7 @@ setuptools.setup(
     version= __version__,
     author=AUTHOR_USER_NAME,
     author_email=AUTHOR_EMAIL,
-    description="A deep learning project for kidney disease classification",
+    description="A machine learning project.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
