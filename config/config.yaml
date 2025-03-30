@@ -1,0 +1,9 @@
+artifacts_root: artifacts
+# The name of the experiment
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_url: https://github.com/Bisma-Shafiq/End-End-Wine-Quality-ML-Project/raw/refs/heads/main/data/winequality.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
