@@ -1,0 +1,13 @@
+numpy 
+pandas
+seaborn
+matplotlib
+flask
+flask-core
+scikit-learn
+tqdm
+notebook
+joblib
+pyYAML
+ensure==1.0.2
+python-box==6.0.2
