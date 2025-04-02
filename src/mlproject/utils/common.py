@@ -7,7 +7,7 @@ import joblib
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
-from typing import Any
+from typing import Any, Dict
 
 
 @ensure_annotations
@@ -50,21 +50,42 @@ def create_directories(path_to_directories: list , verbose=True):
         if verbose :
             logger.info(f"created directory at : {path}")
 
+# @ensure_annotations
+# def save_json(path: Path , data:dict):
+#     """
+#     Save data to json file
+#     Args:
+#         path (Path): path to  json file
+#     Returns:
+#         CofigBox :  data as class attribute instead of dict
+#     """
+#     with open(path) as f:
+#         content = json.load(f)
+
+#     logger.info(f"json file loaded successfully from  : {path}")
+#     return ConfigBox(content)
+
 @ensure_annotations
-def save_json(path: Path , data:dict):
+def save_json(path: Path, data: Dict): # Use Dict instead of dict for type hint
     """
     Save data to json file
     Args:
-        path (Path): path to  json file
-    Returns:
-        CofigBox :  data as class attribute instead of dict
+        path (Path): path to json file
+        data (Dict): data dictionary to be saved
     """
-    with open(path) as f:
-        content = json.load(f)
+    try:
+        # Open the file in write mode ('w')
+        with open(path, "w") as f:
+            # Use json.dump to write the data dictionary to the file
+            # indent=4 makes the output file human-readable
+            json.dump(data, f, indent=4)
 
-    logger.info(f"json file loaded successfully from  : {path}")
-    return ConfigBox(content)
+        logger.info(f"JSON file saved successfully at: {path}")
+        
 
+    except Exception as e:
+        logger.error(f"Error saving JSON file at {path}: {e}")
+        raise e # Re-raise the exception after logging
 
 @ensure_annotations
 def save_bin(data:Any, path: Path):
