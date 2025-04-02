@@ -1,2 +1,4 @@
-batch_size: 32
-learning_rate: 0.001
+ElasticNet:
+  alpha: 0.1
+  l1_ratio: 0.5
+  
