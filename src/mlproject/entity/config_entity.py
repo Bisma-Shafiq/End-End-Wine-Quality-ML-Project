@@ -20,13 +20,13 @@ class DataValidationConfig:
     unzip_data_dir: Path
     all_schema: dict
 
+# data transformation
 @dataclass(frozen=True)
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
 
-
-
+# model trainer
 @dataclass(frozen=True)
 class ModelTrainningConfig:
     root_dir: Path
@@ -36,3 +36,14 @@ class ModelTrainningConfig:
     alpha: float
     l1_ratio: float
     target_column: str
+
+#model evaluation
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path   
+    model_path: Path
+    all_params: dict
+    metric_file_name: Path
+    target_column: str
+  
